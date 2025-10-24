@@ -1,6 +1,7 @@
 package auth;
 
 
+import exceptions.NotFoundException;
 import model.Role;
 import model.User;
 import required.Required;
@@ -35,6 +36,18 @@ public class Auth {
 
 
     public void verifyUser(){
+        String username = required.requiredText("Enter username:");
+        String password = required.requiredText("Enter user password:");
+        boolean found = false;
 
+        for(int i = 0; i < count; i++){
+            if(users[i].getUserName().equals(username) && users[i].getPassword().equals(password)){
+                found = true;
+            }
+        }
+
+        if(!found){
+            throw new NotFoundException("User not found");
+        }
     }
 }
