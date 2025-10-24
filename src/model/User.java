@@ -2,6 +2,7 @@ package model;
 
 public class User {
 
+    public static User[] users;
     private String name;
     private String surname;
     private int age;
