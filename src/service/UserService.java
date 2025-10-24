@@ -48,7 +48,7 @@ public class UserService {
             }
         }
         try {
-            throw new RuntimeException("Bele bir user yoxdur");
+            throw new RuntimeException("There is no such user. ");
         }catch (RuntimeException e){
             e.printStackTrace();
         }
